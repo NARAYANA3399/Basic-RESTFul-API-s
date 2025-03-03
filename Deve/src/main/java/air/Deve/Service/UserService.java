@@ -40,8 +40,8 @@ public class UserService {
 		 return"User Added";
 	}
 	
-	public void deleteData() {
-		 userRepo.deleteById(null);
+	public void deleteData(Long id) {
+		 userRepo.deleteById(id);
 	}
 	
 
