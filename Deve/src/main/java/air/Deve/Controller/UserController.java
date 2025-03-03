@@ -36,7 +36,7 @@ public class UserController {
 		return userService.getData(id);
 	} 
 	
-	@PostMapping("/{id}")
+	@PostMapping("/user")
 	public String postData(@RequestBody UserEntity user) {
 		return userService.addedData(user);
 	}
