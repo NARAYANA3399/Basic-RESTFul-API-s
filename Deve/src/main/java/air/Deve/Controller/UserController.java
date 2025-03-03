@@ -26,24 +26,24 @@ public class UserController {
 		this.userService=userService;
 	}
 	
-	@GetMapping
+	@GetMapping("/")
 	public List<UserEntity> getAllData() {
 		return userService.getAllData();
 	}
 	
-	@GetMapping("/id")
+	@GetMapping("/{id}")
 	public Optional<UserEntity> getData(@PathVariable Long id) {
 		return userService.getData(id);
 	} 
 	
-	@PostMapping
+	@PostMapping("/{id}")
 	public String postData(@RequestBody UserEntity user) {
 		return userService.addedData(user);
 	}
 	
-	@DeleteMapping("/id")
-	public void delete() {
-		 userService.deleteData();
+	@DeleteMapping("/{id}")
+	public void delete(@PathVariable Long id) {
+		 userService.deleteData(id);
 	}
 	
 }
